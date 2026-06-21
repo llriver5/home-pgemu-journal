@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专题 · pg模拟器资料索引 &amp; 使用引导</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f9fafb;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1e293b;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 720px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        /* hero 横幅 */
+        .hero {
+            margin-bottom: 3.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e9edf1;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #eef2f6;
+            padding: 0.15rem 0.75rem;
+            border-radius: 24px;
+            font-size: 0.7rem;
+            letter-spacing: 0.3px;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #475569;
+            max-width: 600px;
+        }
+
+        .hero em {
+            font-style: normal;
+            background: #eef2f6;
+            padding: 0 0.2rem;
+        }
+
+        /* 背景说明 */
+        .background-note {
+            margin: 2.5rem 0 3rem;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2rem 2rem 2.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 0 0 1px rgba(0,0,0,0.02);
+        }
+
+        .background-note h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .background-note h2::before {
+            content: "▹";
+            color: #7c8ba0;
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        .background-note p {
+            font-size: 0.95rem;
+            color: #334155;
+            margin-bottom: 1rem;
+        }
+
+        .background-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 三段自然介绍 */
+        .intro-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin: 2.8rem 0;
+        }
+
+        .intro-item {
+            background: transparent;
+            padding: 0 0 1.8rem 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .intro-item:last-child {
+            border-bottom: none;
+        }
+
+        .intro-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+
+        .intro-item p {
+            font-size: 0.95rem;
+            color: #3f4a5a;
+            margin-bottom: 0.5rem;
+        }
+
+        .intro-item .meta-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            background: #f1f4f8;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            color: #4b5563;
+            margin-right: 0.3rem;
+        }
+
+        /* 引用 / 信息索引特征 */
+        .feature-quote {
+            background: #f3f6fa;
+            border-left: 4px solid #b4c2d1;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0 2.5rem;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .feature-quote p {
+            font-size: 0.9rem;
+            color: #1f2a3f;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-quote .source {
+            font-size: 0.75rem;
+            color: #5c6c7e;
+            margin-top: 0.6rem;
+        }
+
+        /* 页尾提示 */
+        .footer-note {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-note p {
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .footer-note .action-hint {
+            background: #f1f5f9;
+            padding: 1.2rem 1.5rem;
+            border-radius: 20px;
+            margin-top: 0.25rem;
+        }
+
+        .footer-note a {
+            color: #1e3a5f;
+            text-decoration: none;
+            border-bottom: 1px solid #cbd5e1;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 450;
+        }
+
+        .footer-note a:hover {
+            color: #0b1f33;
+            border-bottom-color: #1e3a5f;
+        }
+
+        .footer-note .legal {
+            font-size: 0.75rem;
+            color: #7a879a;
+            margin-top: 1rem;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 500px) {
+            .page {
+                padding: 2rem 1.2rem 3rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .background-note {
+                padding: 1.5rem 1.2rem;
+            }
+            .intro-item {
+                padding-bottom: 1.5rem;
+            }
+            .footer-note .action-hint {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        /* 极简装饰 */
+        .divider-soft {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #dce2ea, transparent);
+            margin: 2rem 0;
+        }
+
+        .taglist {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 0.5rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .taglist span {
+            background: #f1f4f8;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            color: #4b5a6f;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- hero 横幅 -->
+        <header class="hero">
+            <div class="hero-tag">专题 · 资料整理</div>
+            <h1>pg模拟器：<br>从索引到日常使用</h1>
+            <p>一份围绕 <em>pg模拟器</em> 的轻量信息归档，侧重功能脉络与应用场景梳理，保持客观与流畅。</p>
+        </header>
+
+        <!-- 背景说明 -->
+        <section class="background-note">
+            <h2>背景说明</h2>
+            <p>pg模拟器并非单一工具，而是一类面向特定环境的模拟方案。在整理过程中，我们发现许多用户更希望了解其适用边界、资源占用、以及不同系统下的表现差异。这份索引尝试将分散的信息组织成三段可读的笔记，方便快速建立认知框架。</p>
+            <p>所有描述均基于社区文档及公开资料，不包含任何未经验证的功能承诺。</p>
+        </section>
+
+        <!-- 三段自然介绍 + 信息索引特征 -->
+        <div class="intro-grid">
+
+            <div class="intro-item">
+                <h3>1. 资料形态与版本脉络</h3>
+                <p>pg模拟器在多个平台均有对应实现，早期以命令行工具为主，后逐步出现带图形界面的发行版。不同版本对 API 的模拟深度有所区别，部分侧重于指令兼容，部分则更强调运行环境的近似还原。</p>
+                <p>从索引角度看，建议优先关注版本变更日志与已知限制表——这些材料通常比功能介绍页更能反映实际可用性。</p>
+                <div class="taglist">
+                    <span>版本记录</span>
+                    <span>兼容列表</span>
+                    <span>社区维护</span>
+                </div>
+            </div>
+
+            <div class="intro-item">
+                <h3>2. 应用场景与常见配置</h3>
+                <p>根据社区讨论，pg模拟器常被用于快速原型验证、本地化测试以及教学演示。由于其资源消耗相对可控，也适合集成到 CI 流程中作为预检环节。部分团队会将其与容器方案搭配使用，形成轻量级模拟层。</p>
+                <p>在配置上，推荐留意环境变量、端口映射以及日志等级这三个参数——它们对排查问题最有帮助。一个简单的做法是先使用默认配置启动，再根据实际输出逐步调整。</p>
+                <div class="taglist">
+                    <span>测试环境</span>
+                    <span>原型验证</span>
+                    <span>CI/CD</span>
+                </div>
+            </div>
+
+            <div class="intro-item">
+                <h3>3. 注意事项与信息筛选</h3>
+                <p>部分网上教程存在版本滞后或过度简化的问题，建议优先参考官方仓库的示例以及最近半年内的讨论帖。此外，pg模拟器在某些安全策略严格的网络中可能需要额外配置代理或证书，这一点容易被忽略。</p>
+                <p>如果希望跟踪最新动态，可以关注相关的标签或邮件列表，而非仅依赖转载文章。</p>
+                <div class="taglist">
+                    <span>安全策略</span>
+                    <span>版本滞后</span>
+                    <span>官方示例</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 引用 / 索引提示块 -->
+        <div class="feature-quote">
+            <p>“资料整理的关键不在于收集多少链接，而在于理解每个版本背后的设计取舍。” —— 摘自一次社区交流笔记</p>
+            <div class="source"># 索引方法备忘</div>
+        </div>
+
+        <!-- 页尾访问提示（自然嵌入链接） -->
+        <footer class="footer-note">
+            <p>如果你正在寻找一个持续更新的参考源，可以留意 <a href="https://home-pgemu.com">pg模拟器</a> 的主页。那里整理了相对稳定的版本说明与常见问题，适合作为日常查阅的起点。</p>
+            <div class="action-hint">
+                <p>🔍 建议在浏览器书签中保留该地址，方便后续快速定位。配合本地文档或实验笔记，能更高效地评估模拟器在当前场景下的适用性。</p>
+            </div>
+            <div class="legal">
+                本页仅为信息索引与概念梳理，不构成任何形式的推荐或保证。请根据实际需求与合规要求自行判断。
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
