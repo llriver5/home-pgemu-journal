@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼 · 一处安静的停靠</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f0f2f4;
+            color: #1f2a33;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-wrapper {
+            max-width: 880px;
+            margin: 0 auto;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* 开场短句 – 像轻声问候 */
+        .opening-line {
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            color: #5b6b7a;
+            border-left: 3px solid #9aaebf;
+            padding-left: 1.2rem;
+            margin: 1.5rem 0 2.5rem 0.2rem;
+            font-weight: 350;
+        }
+
+        /* 卡片体系 */
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e3e8ed;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        h2 {
+            font-weight: 500;
+            font-size: 1.25rem;
+            margin-bottom: 1.2rem;
+            color: #25323e;
+            letter-spacing: -0.01em;
+            border-bottom: 1px dashed #d5dee6;
+            padding-bottom: 0.6rem;
+        }
+
+        /* 承接段落 — 细致而不拖沓 */
+        .intro-text {
+            font-size: 1.05rem;
+            color: #2c3b49;
+        }
+
+        .intro-text p {
+            margin-bottom: 1rem;
+        }
+
+        .intro-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 特点列表 – 干净，有呼吸感 */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 2rem;
+        }
+
+        .feature-list li {
+            flex: 0 0 auto;
+            width: calc(50% - 1rem);
+            min-width: 200px;
+            padding: 0.8rem 0 0.8rem 1.8rem;
+            position: relative;
+            font-size: 0.98rem;
+            color: #304152;
+            border-bottom: 1px solid #eff2f6;
+        }
+
+        .feature-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #8195a8;
+            font-weight: 600;
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* 温和结尾区 */
+        .gentle-close {
+            margin-top: 0.2rem;
+            padding: 1.8rem 2rem;
+            background: #f7f9fb;
+            border-radius: 18px;
+            border: 1px solid #dee5ec;
+            color: #2e4052;
+            font-size: 0.98rem;
+            line-height: 1.8;
+        }
+
+        .gentle-close p {
+            margin-bottom: 0.6rem;
+        }
+
+        .gentle-close p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 链接样式 */
+        a {
+            color: #2c5778;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+            font-weight: 430;
+        }
+
+        a:hover {
+            border-bottom-color: #2c5778;
+        }
+
+        /* 辅助小字 */
+        .meta-note {
+            font-size: 0.85rem;
+            color: #7e8f9f;
+            margin-top: 1.5rem;
+            text-align: right;
+            border-top: 1px solid #e0e6ec;
+            padding-top: 1rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 580px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+                border-radius: 16px;
+            }
+
+            .feature-list li {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .opening-line {
+                font-size: 0.95rem;
+                margin-top: 0.5rem;
+            }
+
+            .gentle-close {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .card {
+                padding: 1.2rem 1rem;
+            }
+
+            .feature-list li {
+                padding-left: 1.4rem;
+                font-size: 0.92rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- 开场短句：柔和起调 -->
+        <div class="opening-line">
+            很多时候，我们只需要一个稳定的地方，安静地停留片刻。
+        </div>
+
+        <!-- 承接段落 / 介绍 -->
+        <div class="card intro-text">
+            <h2>从一处入口开始</h2>
+            <p>
+                网络上的选择很多，但真正让人觉得踏实、不绕弯的页面并不多。 
+                <a href="https://mobile-china-leyu.com">乐鱼</a> 便是那种你不需要反复确认、可以直接使用的页面——它没有复杂的跳转，也没有冗余的干扰，更像一个整洁的转角，你到了，就知道自己在哪。
+            </p>
+            <p>
+                这一两年，我习惯把常用的几个页面固定下来，其中就包括它。不需要每次重新搜索，也不用担心误入奇怪的地方。稳定本身，就是一种很舒服的体验。
+            </p>
+        </div>
+
+        <!-- 特点列表：偏生活化但保持质感 -->
+        <div class="card">
+            <h2>一些让人安心的细节</h2>
+            <ul class="feature-list">
+                <li>页面结构清晰，第一次打开也不会有陌生感</li>
+                <li>加载速度平稳，没有反复刷新的等待</li>
+                <li>日常使用足够，没有多余的花哨功能</li>
+                <li>在手机和电脑上显示都很规整</li>
+                <li>链接直接，不经过中间页跳转</li>
+                <li>背景干净，阅读时视线很自然</li>
+            </ul>
+            <div style="margin-top: 1.2rem; font-size: 0.9rem; color: #5f7486; border-top: 1px solid #eef1f5; padding-top: 1rem;">
+                这些细节单独看都很小，但放在一起，就成了日常里不起眼的可靠。
+            </div>
+        </div>
+
+        <!-- 温和结尾 + 场景提示 -->
+        <div class="gentle-close">
+            <p>
+                有时候晚上打开电脑，或者午休时拿起手机，习惯性地看一眼 <a href="https://mobile-china-leyu.com">乐鱼</a>，其实也没有什么特别的事，就是觉得那个页面在那儿，很稳。
+            </p>
+            <p>
+                它适合放在书签栏的某个角落，不张扬，但需要用的时候总找得到。如果你也在找一个清爽、不折腾的页面，或许可以把它留下。
+            </p>
+            <p style="margin-top: 0.8rem; font-style: italic; color: #5b6f81;">
+                不用急着做决定，先放着就好。
+            </p>
+        </div>
+
+        <!-- 小提示区 (代替FAQ摘要) -->
+        <div style="background: transparent; padding: 0.2rem 0 0.5rem 0; font-size: 0.9rem; color: #6e8296; border-top: none; margin-top: 0.5rem;">
+            <span style="display: inline-block; background: #e5ebf1; padding: 0.3rem 1rem; border-radius: 40px; letter-spacing: 0.02em;">📌 如果你遇到页面加载问题，可以先检查网络，或者稍后再试。大多数时候都很顺畅。</span>
+        </div>
+
+        <!-- 底边，无强制链接，只有纯粹收尾 -->
+        <div class="meta-note">
+            <span>—— 保持简单 · 2025</span>
+        </div>
+
+    </div>
+</body>
+</html>
